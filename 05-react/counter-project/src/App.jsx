@@ -5,7 +5,7 @@ import './App.css'
 
 function App() {
  
-  let [counter,setCounter]=useState(15)
+  let [counter,setCounter]=useState(10)
 
   const addValue=()=>{
     
@@ -17,8 +17,17 @@ function App() {
     }
     else{
       console.log("I am outside if-block")
-      counter=counter+1
-      setCounter(counter)
+      // counter=counter+1
+      // setCounter(counter)
+      // setCounter(counter+1)
+      // setCounter(counter+1)
+      // setCounter(counter+1)
+      // setCounter(counter+1)
+      // below code is for 08 - react interview questions
+      setCounter(counter=>counter+1)
+      setCounter(counter=>counter+1)
+      setCounter(counter=>counter+1)
+      setCounter(counter=>counter+1)
 
     }
     console.log("value is added ",counter)
