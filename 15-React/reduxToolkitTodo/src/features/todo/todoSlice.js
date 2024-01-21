@@ -1,0 +1,41 @@
+import { createSlice,nanoid } from "@reduxjs/toolkit";
+// here nanoid  creates unique id thats all ...
+
+
+const initialState={
+    todos:[{id:1,text:"hello world"}]
+}
+
+// reducer is a functionality 
+
+// slice is broader version on reducer 
+
+export const todoSlice=createSlice({
+    name:'todo',
+    initialState,
+    reducers:{
+        addTodo:(state , action)=>{
+            const todo={
+                id:nanoid(),
+                text:action.payload,
+
+            }
+            state.todos.push(todo)
+        },
+        removeTodo:(state,action)=>{
+            state.todos=state.todos.filter((todo)=>todo.id!== action.payload)
+        },
+    }
+})
+
+
+export const {addTodo,removeTodo}=todoSlice.actions
+
+
+export default todoSlice.reducer
+
+
+
+
+
+
